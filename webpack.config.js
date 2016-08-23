@@ -1,4 +1,4 @@
-var webpak = require('webpack');
+var webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -6,9 +6,9 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
-  externals: [
+  externals: {
     jquery: 'jQuery'
-  ],
+  },
   plugins: [
     new webpack.ProvidePlugin({
       '$': 'jquery',
