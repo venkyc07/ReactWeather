@@ -24943,7 +24943,6 @@
 	//         <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink><br/>
 	//         <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link><br/>
 	//         <Link to="/example" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Example</Link>
-	//
 	//       <a href="#/about">Go To About</a>
 	//       </div>
 	//     );
@@ -24953,34 +24952,50 @@
 	var Nav = function Nav(props) {
 	  return React.createElement(
 	    'div',
-	    null,
+	    { className: 'top-bar' },
 	    React.createElement(
-	      'h2',
-	      null,
-	      'navigation Component'
+	      'div',
+	      { className: 'top-bar-left' },
+	      React.createElement(
+	        'ul',
+	        { className: 'menu' },
+	        React.createElement(
+	          'li',
+	          { className: 'menutext' },
+	          'React Weather App '
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            IndexLink,
+	            { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'Get Weather'
+	          ),
+	          React.createElement('br', null)
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'About'
+	          ),
+	          React.createElement('br', null)
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/example', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	            'Example'
+	          )
+	        )
+	      )
 	    ),
-	    React.createElement(
-	      IndexLink,
-	      { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'Get Weather'
-	    ),
-	    React.createElement('br', null),
-	    React.createElement(
-	      Link,
-	      { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'About'
-	    ),
-	    React.createElement('br', null),
-	    React.createElement(
-	      Link,
-	      { to: '/example', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	      'Example'
-	    ),
-	    React.createElement(
-	      'a',
-	      { href: '#/about' },
-	      'Go To About'
-	    )
+	    React.createElement('div', { className: 'top-bar-right' })
 	  );
 	};
 	module.exports = Nav;
